@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "OCR Magic",
+    "version": "1.0",
+    "description": "OCR Magic is your ultimate tool for effortless optical character recognition. Simply upload or drag-and-drop images, and let OCR Magic seamlessly extract text, making it easily editable and searchable. Say goodbye to manual transcription hassles and hello to streamlined text conversion with OCR Magic!",
+    "permissions": ["storage", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "favicon-16x16.png",
+        "32": "favicon-32x32.png",
+        "128": "favicon-128x128.png"
+      }
+    },
+    "icons": {
+        "16": "favicon-16x16.png",
+        "32": "favicon-32x32.png",
+        "128": "favicon-128x128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js", "tesseract.min.js"]
+      }
+    ]
+  }
+  
