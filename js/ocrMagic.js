@@ -27,6 +27,18 @@ window.addEventListener("load", (event) => {
             imageProcess(file);
         }
     });
+
+    dropzone.addEventListener('paste', function(e) {
+        const items = (e.clipboardData || window.clipboardData).items;
+        for (let item of items) {
+          if (item.type.indexOf('image') !== -1) {
+            const file = item.getAsFile();
+            showImageProcessing(true);
+            imageProcess(file);
+          }
+        }
+      });
+
 });
 
 
