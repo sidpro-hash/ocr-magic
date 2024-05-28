@@ -1,8 +1,7 @@
 
 
 window.addEventListener("load", (event) => {
-    console.log("page is fully loaded");
-
+    
     document.getElementById('imageInput').addEventListener('change', function() {
         readImage(this);
     });
@@ -89,6 +88,7 @@ async function imageProcess(file) {
     const result = await Tesseract.recognize(blob, 'eng');
     const text = result?.data?.text;
     document.getElementById('result').textContent = text;
+    document.getElementById('scrollable').classList.add("resultOutline");
 
     showImageProcessing(false);
 

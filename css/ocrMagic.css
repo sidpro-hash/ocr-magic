@@ -104,14 +104,19 @@ label#uploadLabel:hover {
   text-align:left;
   max-width: 100%;
   white-space: pre; /* Keep text preformatted and do not wrap */
-  
+}
+.resultOutline{
+  outline: 1px solid #ffff7693;
+  padding: 5px;
 }
 
 .scrollable-container {
   width: 50%;
   margin-top: 20px;
   margin-bottom: 50px;
-  overflow: auto;
+  overflow: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #ffff76;
 }
 
 @media only screen and (max-width: 600px){
